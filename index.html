@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Systems Thinking Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Systems Thinking Quiz Website</h1>
+      <p>
+        This is a ready-to-use MCQ quiz website. 
+      </p>
+      <div class="toolbar">
+        <button class="primary" onclick="startQuiz()">Start Quiz</button>
+        <button class="secondary" onclick="shuffleQuestions()">Shuffle Questions</button>
+        <button class="danger" onclick="resetQuiz()">Reset Quiz</button>
+      </div>
+    </section>
+
+    <div class="main-grid">
+      <aside class="panel">
+        <h3>Quiz Dashboard</h3>
+        <div class="stats">
+          <div class="stat-box">
+            <small>Total Questions</small>
+            <strong id="totalQuestions">0</strong>
+          </div>
+          <div class="stat-box">
+            <small>Answered</small>
+            <strong id="answeredCount">0</strong>
+          </div>
+          <div class="stat-box">
+            <small>Current Score</small>
+            <strong id="currentScore">0</strong>
+          </div>
+        </div>
+        <div class="progress-wrap">
+          <p class="hint">Progress</p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="hint" id="progressText">0% completed</p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="quiz-card" id="quizCard">
+          <h2>Question Area</h2>
+          <div class="question-meta">
+            <span class="badge" id="questionNumber">Question 1</span>
+            <span class="badge" id="sectionName">Section</span>
+          </div>
+          <div class="question-text" id="questionText">Click Start Quiz to begin.</div>
+          <div class="options" id="optionsContainer"></div>
+          <div class="nav-actions">
+            <div class="nav-left">
+              <button class="secondary" onclick="previousQuestion()">Previous</button>
+              <button class="secondary" onclick="nextQuestion()">Next</button>
+            </div>
+            <div class="nav-right">
+              <button class="primary" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+          </div>
+          <div class="footer-note">
+            Tip: You can use this page for practice tests, classroom quizzes, or exam preparation.
+          </div>
+        </section>
+
+        <section class="result-card" id="resultCard">
+          <h2>Quiz Result</h2>
+          <p>Your final score is:</p>
+          <div class="score-big" id="finalScore">0 / 0</div>
+          <p id="percentageText"></p>
+          <div class="toolbar">
+            <button class="primary" onclick="restartQuiz()">Restart Quiz</button>
+          </div>
+          <div class="review-list" id="reviewList"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
